@@ -1,0 +1,35 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    height: 100vh;
+    background-image: url('/backgrounds/test3.png');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+  }
+  
+  .login-title {
+    font-size: 1.5rem;
+    text-shadow: 0 0 8px #7c3aed;
+  }
+  
+  .btn-pixel {
+    background-color: black;
+    color: white;
+    border: 4px solid #7c3aed;
+    padding: 1rem 2rem;
+    font-size: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .btn-pixel:hover {
+    box-shadow: 0 0 12px #7c3aed;
+    transform: scale(1.05);
+  }
+  
