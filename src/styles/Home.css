@@ -1,3 +1,9 @@
+.home-content{
+  background-image: url('/backgrounds/Homebg.png');
+  background-size: cover;
+  background-position: center;
+}
+
 .header {
   display: flex;
   justify-content: space-between;

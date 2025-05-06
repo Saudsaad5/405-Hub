@@ -20,7 +20,7 @@ const PostUploader = () => {
 
     try {
       await addDoc(collection(db, "posts"), {
-        uid: userData.uid,
+        authorId: userData.uid,
         displayName: userData.displayName,
         avatar: userData.avatar,
         text,
