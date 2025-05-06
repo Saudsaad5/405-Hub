@@ -80,7 +80,6 @@ const ProfileFeed = () => {
 
   return (
     <div className="post-feed">
-      <h2>My Posts</h2>
       {posts.length === 0 && <p>You haven't posted anything yet.</p>}
       {posts.map((post) => {
         const hasLiked = post.likes?.includes(userData?.uid);
