@@ -1,8 +1,8 @@
 import React from "react";
 import { useUser } from "../context/UserContext";
-import "../styles/profile.css"; // we’ll make this in a sec
-import TopBar from "../context/TopBar";
-import SideBar from "../context/SideBar";
+import "../styles/profile.css";
+import TopBar from "../components/TopBar";
+import SideBar from "../components/SideBar";
 
 const Profile = () => {
   const { userData, loading } = useUser();
@@ -18,7 +18,11 @@ const Profile = () => {
 
         <div className="profile-content">
           <div className="profile-header">
-            <img src={userData.avatar} alt="Avatar" className="profile-avatar" />
+            <img
+              src={userData.avatar}
+              alt="Avatar"
+              className="profile-avatar"
+            />
             <div>
               <h2>{userData.displayName}</h2>
               <p className="level-label">Level {userData.level}</p>
@@ -26,7 +30,10 @@ const Profile = () => {
           </div>
 
           <div className="xp-bar">
-            <div className="xp-fill" style={{ width: `${(userData.xp / 1600) * 100}%` }}></div>
+            <div
+              className="xp-fill"
+              style={{ width: `${(userData.xp / 1600) * 100}%` }}
+            ></div>
           </div>
           <p className="xp-text">XP: {userData.xp} / 1600</p>
 
