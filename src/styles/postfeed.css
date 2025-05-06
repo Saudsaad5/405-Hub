@@ -1,0 +1,52 @@
+.post-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .post-card {
+    background-color: #1a1a1a;
+    border: 2px solid #7c3aed;
+    padding: 1rem;
+    border-radius: 12px;
+    color: white;
+  }
+  
+  .post-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .post-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #7c3aed;
+  }
+  
+  .post-name {
+    font-weight: bold;
+    color: #7c3aed;
+    font-size: 0.85rem;
+  }
+  
+  .post-time {
+    font-size: 0.75rem;
+    color: #aaa;
+  }
+  
+  .post-text {
+    margin: 0.75rem 0;
+    font-size: 0.85rem;
+  }
+  
+  .post-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    border: 1px solid #444;
+  }
+  

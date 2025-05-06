@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import Profile from "./pages/Profile";
 import "react-toastify/dist/ReactToastify.css";
 import Leaderboard from "./pages/Leaderboard";
+
 function App() {
   return (
     <Router>

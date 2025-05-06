@@ -1,25 +1,31 @@
 import "../styles/dashboard.css";
 import TopBar from "../components/TopBar";
 import SideBar from "../components/SideBar";
-import { useUser } from "../context/UserContext"; // ✅ using context
-import { useState} from "react";
+import { useUser } from "../context/UserContext";
+import { useState } from "react";
 import Profile from "./Profile";
-import Home from "./Home";
+import PostUploader from "../components/PostUploader";
+import PostFeed from "../components/PostFeed";
 import Leaderboard from "./Leaderboard";
 
 const Dashboard = () => {
   const { userData, loading } = useUser();
-  const [activeTab, setActiveTab] = useState('Home');
+  const [activeTab, setActiveTab] = useState("Home");
 
   const renderContent = () => {
     if (!userData) return <p>Loading...</p>;
 
     switch (activeTab) {
-      case 'Home':
-        return <Home />;
-      case 'Leaderboard': 
+      case "Home":
+        return (
+          <>
+            <PostUploader />
+            <PostFeed />
+          </>
+        );
+      case "Leaderboard":
         return <Leaderboard />;
-      case 'Profile': 
+      case "Profile":
         return <Profile />;
       default:
         return <h2>Select a tab</h2>;
@@ -34,9 +40,7 @@ const Dashboard = () => {
       <TopBar />
       <div className="dashboard-body">
         <SideBar activeTab={activeTab} setActiveTab={setActiveTab} />
-        <div className="dashboard-content">
-          {renderContent()}
-        </div>
+        <div className="dashboard-content">{renderContent()}</div>
       </div>
     </div>
   );
