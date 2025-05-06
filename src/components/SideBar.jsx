@@ -12,9 +12,9 @@ const SideBar = ({activeTab, setActiveTab}) => {
         onClick={() => handleTabClick('Home')}>
             Home</li>
 
-        <li className={`sidebar-option ${activeTab === 'leader board' ? 'active' : ''}`}
-        onClick={() => handleTabClick('leader board')}>
-            leader board</li>
+        <li className={`sidebar-option ${activeTab === 'Leaderboard' ? 'active' : ''}`}
+        onClick={() => handleTabClick('Leaderboard')}>
+            Leaderboard</li>
 
         <li className={`sidebar-option ${activeTab === 'Profile' ? 'active' : ''}`}
         onClick={() => handleTabClick('Profile')}>

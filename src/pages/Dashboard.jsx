@@ -6,6 +6,7 @@ import { useState } from "react";
 import Profile from "./Profile";
 import PostUploader from "../components/PostUploader";
 import PostFeed from "../components/PostFeed";
+import Leaderboard from "./Leaderboard";
 
 const Dashboard = () => {
   const { userData, loading } = useUser();
@@ -22,8 +23,8 @@ const Dashboard = () => {
             <PostFeed />
           </>
         );
-      case "leader board":
-        return <p>Welcome to the Leaderboard tab!</p>;
+      case "Leaderboard":
+        return <Leaderboard />;
       case "Profile":
         return <Profile />;
       default:
