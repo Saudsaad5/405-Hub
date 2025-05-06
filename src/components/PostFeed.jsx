@@ -1,16 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  collection,
-  doc,
-  onSnapshot,
-  query,
-  updateDoc,
-  arrayUnion,
-  arrayRemove,
-  increment,
-  orderBy,
-  getDoc,
-} from "firebase/firestore";
+import {collection, doc, onSnapshot, query, updateDoc, arrayUnion, arrayRemove, increment, orderBy} from "firebase/firestore";
 import { db } from "../services/firebase-config";
 import { useUser } from "../context/UserContext";
 import CommentModal from "./CommentModal";
@@ -47,11 +36,10 @@ const PostFeed = () => {
           likeCount: increment(-1),
         });
 
-        // Decrease XP if unliking someone else's post
         if (post.uid !== userData.uid) {
           const authorRef = doc(db, "users", post.uid);
           await updateDoc(authorRef, {
-            xp: increment(-10), // 👈 decrease XP
+            xp: increment(-10), 
           });
         }
       } else {

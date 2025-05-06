@@ -25,10 +25,10 @@ const Profile = () => {
           <div className="xp-bar">
             <div
               className="xp-fill"
-              style={{ width: `${(userData.xp / 1600) * 100}%` }}
+              style={{ width: `${(userData.xp / 100) * 100}%` }}
             ></div>
           </div>
-          <p className="xp-text">XP: {userData.xp} / 1600</p>
+          <p className="xp-text">XP: {userData.xp} / 100</p>
 
           <div className="stat-cards">
             <div className="stat-card">Streak: 4 days</div>
