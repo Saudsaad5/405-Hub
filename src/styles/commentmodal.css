@@ -1,0 +1,86 @@
+.comment-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(10, 10, 10, 0.8);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+  }
+  
+  .comment-content {
+    background-color: #1a1a1a;
+    border: 2px solid #7c3aed;
+    border-radius: 16px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 600px;
+    color: white;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 1.2rem;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .post-details {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+  }
+  
+  .comments-section {
+    margin: 1rem 0;
+  }
+  
+  .comment-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #7c3aed;
+  }
+  
+  .comment-name {
+    font-weight: bold;
+    color: #7c3aed;
+    font-size: 0.7rem;
+  }
+  
+  .comment-text {
+    font-size: 0.7rem;
+    color: #eee;
+  }
+  
+  .comment-input textarea {
+    width: 100%;
+    height: 60px;
+    resize: none;
+    background: black;
+    border: 2px solid #7c3aed;
+    color: white;
+    padding: 0.5rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+  }
+  
