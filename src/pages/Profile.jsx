@@ -8,7 +8,7 @@ const Profile = () => {
   if (loading) return <p>Loading...</p>;
   if (!userData) return <p>User not found.</p>;
 
-  return (
+    return (
         <div className="profile-content">
           <div className="profile-header">
             <img
@@ -40,9 +40,10 @@ const Profile = () => {
             <button className="btn-pixel">Start Task</button>
             <button className="btn-pixel">View Badges</button>
             <button className="btn-pixel">Edit Profile</button>
-          </div>
+            </div>
         </div>
-  );
+    );
 };
 
 export default Profile;
+

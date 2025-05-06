@@ -5,6 +5,7 @@ import { useUser } from "../context/UserContext"; // ✅ using context
 import { useState} from "react";
 import Profile from "./Profile";
 import Home from "./Home";
+import Leaderboard from "./Leaderboard";
 
 const Dashboard = () => {
   const { userData, loading } = useUser();
@@ -17,7 +18,7 @@ const Dashboard = () => {
       case 'Home':
         return <Home />;
       case 'leader board': 
-        return <p>Welcome to the Leaderboard tab!</p>;
+        return <Leaderboard />;
       case 'Profile': 
         return <Profile />;
       default:
