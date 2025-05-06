@@ -29,3 +29,9 @@
     background-color: #727272;
     transform: translateX(5px);
 }
+
+.sidebar-option.active {
+    color: #7c3aed;
+    font-weight: bold;
+  }
+  
