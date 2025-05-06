@@ -1,30 +1,24 @@
 import "../styles/SideBar.css";
-import { NavLink } from "react-router-dom";
 
-const SideBar = () => {
+const SideBar = ({activeTab, setActiveTab}) => {
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
+    
   return (
     <div className="sidebar">
       <ul className="sidebar-options">
-        <li>
-          <NavLink to="/dashboard" className="sidebar-option">
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/profile" className="sidebar-option">
-            Profile
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/settings" className="sidebar-option">
-            Settings
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/help" className="sidebar-option">
-            Help
-          </NavLink>
-        </li>
+      <li className={`sidebar-option ${activeTab === 'Home' ? 'active' : ''}`}
+        onClick={() => handleTabClick('Home')}>
+            Home</li>
+
+        <li className={`sidebar-option ${activeTab === 'leader board' ? 'active' : ''}`}
+        onClick={() => handleTabClick('leader board')}>
+            leader board</li>
+
+        <li className={`sidebar-option ${activeTab === 'Profile' ? 'active' : ''}`}
+        onClick={() => handleTabClick('Profile')}>
+            Profile</li>
       </ul>
     </div>
   );

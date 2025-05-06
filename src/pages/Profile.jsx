@@ -1,8 +1,6 @@
 import React from "react";
 import { useUser } from "../context/UserContext";
 import "../styles/profile.css";
-import TopBar from "../components/TopBar";
-import SideBar from "../components/SideBar";
 
 const Profile = () => {
   const { userData, loading } = useUser();
@@ -11,11 +9,6 @@ const Profile = () => {
   if (!userData) return <p>User not found.</p>;
 
   return (
-    <div className="profile-page">
-      <TopBar />
-      <div className="profile-body">
-        <SideBar />
-
         <div className="profile-content">
           <div className="profile-header">
             <img
@@ -49,8 +42,6 @@ const Profile = () => {
             <button className="btn-pixel">Edit Profile</button>
           </div>
         </div>
-      </div>
-    </div>
   );
 };
 
