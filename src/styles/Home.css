@@ -1,0 +1,53 @@
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .community-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .community-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #7c3aed;
+  }
+  
+  .community-name {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .community-tagline {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .user-profile {
+    text-align: right;
+    width: 8%;
+  }
+  
+  .user-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid #7c3aed;
+    position: relative;
+    display: flex;
+    text-align: center;
+  }
+  
+  .user-level {
+    font-size: 14px;
+    margin-top: 15px;
+    position: relative;
+    display: flex;
+    text-align: center;
+  }
