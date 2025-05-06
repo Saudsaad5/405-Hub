@@ -5,7 +5,6 @@ import { useUser } from "../context/UserContext";
 import { toast } from "react-toastify";
 import "../styles/postuploader.css";
 
-
 const PostUploader = () => {
   const { userData } = useUser();
   const [text, setText] = useState("");

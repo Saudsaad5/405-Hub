@@ -50,3 +50,27 @@
     border: 1px solid #444;
   }
   
+  .post-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .like-btn, .comment-btn {
+    background-color: black;
+    border: 2px solid #7c3aed;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .like-btn.liked {
+    background-color: #7c3aed;
+    color: white;
+    box-shadow: 0 0 6px #7c3aed;
+  }
+  
