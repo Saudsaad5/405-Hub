@@ -7,7 +7,7 @@ import Profile from "./Profile";
 
 const Dashboard = () => {
   const { userData, loading } = useUser();
-  const [activeTab, setActiveTab] = useState('progress');
+  const [activeTab, setActiveTab] = useState('Home');
 
   const renderContent = () => {
     if (!userData) return <p>Loading...</p>;
