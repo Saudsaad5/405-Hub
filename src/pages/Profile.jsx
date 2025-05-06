@@ -34,13 +34,10 @@ const Profile = () => {
 
       <div className="profile-content">
         <div className="profile-header">
-          <img
-            src={userData.avatar}
-            alt="Avatar"
-            className="profile-avatar"
-          />
-          <div>
-            <h2>{userData.displayName}</h2>
+          <img src={userData.avatar} alt="Avatar" className="profile-avatar"/>
+          <div  className="profile-info">
+          <h2 className="Name">{userData.displayName}</h2>
+          <h3 className="Rank">Rank {userData.level}</h3>
             <p className="level-label">Level {userData.level}</p>
           </div>
         </div>
@@ -52,18 +49,6 @@ const Profile = () => {
           ></div>
         </div>
         <p className="xp-text">XP: {currentXP} / 100</p>
-
-        <div className="stat-cards">
-          <div className="stat-card">Streak: 4 days</div>
-          <div className="stat-card">Badges: 3</div>
-          <div className="stat-card">Rank: #12</div>
-        </div>
-
-        <div className="profile-actions">
-          <button className="btn-pixel">Start Task</button>
-          <button className="btn-pixel">View Badges</button>
-          <button className="btn-pixel">Edit Profile</button>
-        </div>
       </div>
     </>
   );
