@@ -1,22 +1,49 @@
-import ProfileHeader from "../components/ProfileHeader";
-import XPBar from "../components/XPBar";
-import StatCard from "../components/StatCard";
+import React from "react";
+import { useUser } from "../context/UserContext";
+import "../styles/profile.css";
 
-export default function Profile() {
-    return (
-        <div className="max-w-xl mx-auto p-4 bg-white rounded shadow space-y-4">
-            <ProfileHeader name="Saud Saad" level={3} />
-            <XPBar currentXP={1200} maxXP={1600} />
-            <div className="flex justify-between">
-                <StatCard icon="⚡" label="Streak: 4 Days" />
-                <StatCard icon="🏆" label="Badges: 3" />
-                <StatCard icon="🔥" label="Rank: #12" />
+const Profile = () => {
+  const { userData, loading } = useUser();
+
+  if (loading) return <p>Loading...</p>;
+  if (!userData) return <p>User not found.</p>;
+
+  return (
+        <div className="profile-content">
+          <div className="profile-header">
+            <img
+              src={userData.avatar}
+              alt="Avatar"
+              className="profile-avatar"
+            />
+            <div>
+              <h2>{userData.displayName}</h2>
+              <p className="level-label">Level {userData.level}</p>
             </div>
-            <div className="flex justify-between">
-                <button className="bg-green-500 text-white px-4 py-2 rounded">🎮 Start Task</button>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded">👀 View Badges</button>
-                <button className="bg-yellow-500 text-white px-4 py-2 rounded">📝 Edit Profile</button>
-            </div>
+          </div>
+
+          <div className="xp-bar">
+            <div
+              className="xp-fill"
+              style={{ width: `${(userData.xp / 1600) * 100}%` }}
+            ></div>
+          </div>
+          <p className="xp-text">XP: {userData.xp} / 1600</p>
+
+          <div className="stat-cards">
+            <div className="stat-card">Streak: 4 days</div>
+            <div className="stat-card">Badges: 3</div>
+            <div className="stat-card">Rank: #12</div>
+          </div>
+
+          <div className="profile-actions">
+            <button className="btn-pixel">Start Task</button>
+            <button className="btn-pixel">View Badges</button>
+            <button className="btn-pixel">Edit Profile</button>
+          </div>
         </div>
-    );
-}
+  );
+};
+
+export default Profile;
+
