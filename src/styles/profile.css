@@ -1,13 +1,4 @@
-.profile-page {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .profile-body {
-    display: flex;
-  }
-  
-  .profile-content {
+.profile-content {
     flex-grow: 1;
     padding: 2rem;
     color: white;
