@@ -17,7 +17,7 @@ const Dashboard = () => {
     switch (activeTab) {
       case 'Home':
         return <Home />;
-      case 'leader board': 
+      case 'Leaderboard': 
         return <Leaderboard />;
       case 'Profile': 
         return <Profile />;
