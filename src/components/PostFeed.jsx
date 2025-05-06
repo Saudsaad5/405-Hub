@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {collection, doc, onSnapshot, query, updateDoc, arrayUnion, arrayRemove, increment, orderBy} from "firebase/firestore";
+import {collection, doc, onSnapshot, query, updateDoc, arrayUnion, arrayRemove, increment, orderBy, getDoc} from "firebase/firestore";
 import { db } from "../services/firebase-config";
 import { useUser } from "../context/UserContext";
 import CommentModal from "./CommentModal";
@@ -25,21 +25,34 @@ const PostFeed = () => {
 
   const handleLike = async (post) => {
     if (!userData) return;
-
+  
     const postRef = doc(db, "posts", post.id);
     const hasLiked = post.likes?.includes(userData.uid);
-
+  
     try {
+      const authorRef = doc(db, "users", post.uid);
+      const authorSnap = await getDoc(authorRef);
+      const authorData = authorSnap.exists() ? authorSnap.data() : null;
+  
+      if (!authorData) return;
+  
+      const currentXP = authorData.xp || 0;
+      const currentLevel = authorData.level || 0;
+  
       if (hasLiked) {
         await updateDoc(postRef, {
           likes: arrayRemove(userData.uid),
           likeCount: increment(-1),
         });
-
+  
         if (post.uid !== userData.uid) {
-          const authorRef = doc(db, "users", post.uid);
+          const newXP = currentXP - 10;
+          const prevThreshold = Math.floor(currentXP / 100);
+          const newThreshold = Math.floor(newXP / 100);
+  
           await updateDoc(authorRef, {
-            xp: increment(-10), 
+            xp: newXP,
+            ...(newThreshold < prevThreshold && { level: increment(-1) }),
           });
         }
       } else {
@@ -47,11 +60,15 @@ const PostFeed = () => {
           likes: arrayUnion(userData.uid),
           likeCount: increment(1),
         });
-
+  
         if (post.uid !== userData.uid) {
-          const authorRef = doc(db, "users", post.uid);
+          const newXP = currentXP + 10;
+          const prevThreshold = Math.floor(currentXP / 100);
+          const newThreshold = Math.floor(newXP / 100);
+  
           await updateDoc(authorRef, {
-            xp: increment(10),
+            xp: newXP,
+            ...(newThreshold > prevThreshold && { level: increment(1) }),
           });
         }
       }
