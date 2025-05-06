@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/leaderboard.css"; // Import your CSS file for styling
+import "../styles/leaderboard.css"; 
 export default function Leaderboard() {
     const users = [
       { id: 1, name: "Saud Saad", avatar: "https://i.pravatar.cc/40?img=1", xp: 1600 },

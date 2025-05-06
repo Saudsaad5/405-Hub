@@ -14,7 +14,7 @@ const SideBar = ({activeTab, setActiveTab}) => {
 
         <li className={`sidebar-option ${activeTab === 'Leaderboard' ? 'active' : ''}`}
         onClick={() => handleTabClick('Leaderboard')}>
-            leader board</li>
+            Leaderboard</li>
 
         <li className={`sidebar-option ${activeTab === 'Profile' ? 'active' : ''}`}
         onClick={() => handleTabClick('Profile')}>
