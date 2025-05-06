@@ -1,6 +1,6 @@
 import "../styles/dashboard.css";
-import TopBar from "../context/TopBar";
-import SideBar from "../context/SideBar";
+import TopBar from "../components/TopBar";
+import SideBar from "../components/SideBar";
 
 
 const Dashboard = () => {
