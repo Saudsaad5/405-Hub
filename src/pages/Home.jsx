@@ -21,8 +21,8 @@ const Home = () => {
         <div className="community-info">
           <div className="community-avatar"></div>
           <div>
-            <h2 className="community-name">Community Name</h2>
-            <p className="community-tagline">something cool</p>
+            <h2 className="community-name">405-Hub</h2>
+            <p className="community-tagline">Not Just a Course. A Community.</p>
           </div>
         </div>
         <div className="user-profile">
