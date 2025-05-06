@@ -16,7 +16,7 @@ const ProfileFeed = () => {
     const unsubscribe = onSnapshot(q, (snapshot) => {
       const userPosts = snapshot.docs
         .map((doc) => ({ id: doc.id, ...doc.data() }))
-        .filter((post) => post.uid === userData.uid);
+        .filter((post) => post.authorId === userData.uid)
       setPosts(userPosts);
     });
 
