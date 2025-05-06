@@ -11,6 +11,10 @@ const Home = () => {
   if (loading) return <p>Loading...</p>;
   if (!userData) return <p>User not found.</p>;
 
+  const handleUploader = () => {
+    setShowUploader(showUploader ? false : true);
+  }
+
   return (
     <div className="home-content">
       <div className="header">
@@ -27,24 +31,20 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Post Button */}
       <div className="post-btn-container">
-        <button className="btn-pixel" onClick={() => setShowUploader(true)}>
+        <button className="btn-pixel" onClick={() => handleUploader()}>
           + Post
         </button>
       </div>
 
-      {/* Post Modal */}
       {showUploader && (
         <div className="post-modal">
           <div className="post-modal-content">
-            <button className="close-btn" onClick={() => setShowUploader(false)}>✖</button>
             <PostUploader onPost={() => setShowUploader(false)} />
           </div>
         </div>
       )}
 
-      {/* Feed */}
       <div className="Posts">
         <PostFeed />
       </div>
