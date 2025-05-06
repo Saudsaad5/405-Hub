@@ -27,14 +27,12 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Post Button */}
       <div className="post-btn-container">
         <button className="btn-pixel" onClick={() => setShowUploader(true)}>
           + Post
         </button>
       </div>
 
-      {/* Post Modal */}
       {showUploader && (
         <div className="post-modal">
           <div className="post-modal-content">
@@ -44,7 +42,6 @@ const Home = () => {
         </div>
       )}
 
-      {/* Feed */}
       <div className="Posts">
         <PostFeed />
       </div>

@@ -65,3 +65,24 @@
     gap: 1rem;
   }
   
+  .level-up-popup {
+    background-color: gold;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-align: center;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    animation: pop-up 0.3s ease-in-out;
+  }
+  
+  @keyframes pop-up {
+    from { transform: translateX(-50%) scale(0.8); opacity: 0; }
+    to { transform: translateX(-50%) scale(1); opacity: 1; }
+  }
+  
