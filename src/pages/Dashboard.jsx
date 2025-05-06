@@ -4,8 +4,7 @@ import SideBar from "../components/SideBar";
 import { useUser } from "../context/UserContext";
 import { useState } from "react";
 import Profile from "./Profile";
-import PostUploader from "../components/PostUploader";
-import PostFeed from "../components/PostFeed";
+import Home from "./Home";
 import Leaderboard from "./Leaderboard";
 
 const Dashboard = () => {
@@ -17,12 +16,7 @@ const Dashboard = () => {
 
     switch (activeTab) {
       case "Home":
-        return (
-          <>
-            <PostUploader />
-            <PostFeed />
-          </>
-        );
+        return <Home />;
       case "Leaderboard":
         return <Leaderboard />;
       case "Profile":

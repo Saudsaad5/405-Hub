@@ -1,6 +1,8 @@
 import React from "react";
 import { useUser } from "../context/UserContext";
 import "../styles/Home.css";
+import PostUploader from "../components/PostUploader";
+import PostFeed from "../components/PostFeed"
 
 const Home = () => {
     const { userData, loading } = useUser();
@@ -23,9 +25,10 @@ const Home = () => {
                     <div className="user-level">level: {userData.level} </div>
                 </div>
             </div>
-        <h1>Welcome, {userData.displayName}!</h1>
-        <p>Your current level: {userData.level}</p>
-        <p>Your current XP: {userData.xp}</p>
+            <div className="Posts">
+            <PostFeed />
+            <PostUploader />
+            </div>
         </div>
     );
 }
