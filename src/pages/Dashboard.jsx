@@ -4,6 +4,7 @@ import SideBar from "../components/SideBar";
 import { useUser } from "../context/UserContext"; // ✅ using context
 import { useState} from "react";
 import Profile from "./Profile";
+import Home from "./Home";
 import Leaderboard from "./Leaderboard";
 
 const Dashboard = () => {
@@ -15,8 +16,8 @@ const Dashboard = () => {
 
     switch (activeTab) {
       case 'Home':
-        return <p>Welcome to the Home tab!</p>;
-      case 'Leaderboard': 
+        return <Home />;
+      case 'leader board': 
         return <Leaderboard />;
       case 'Profile': 
         return <Profile />;
