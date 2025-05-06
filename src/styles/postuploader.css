@@ -1,0 +1,37 @@
+.post-uploader {
+    background-color: #1a1a1a;
+    border: 2px solid #7c3aed;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.2);
+  }
+  
+  .post-uploader textarea {
+    width: 90%;
+    height: 100px;
+    resize: none;
+    padding: 1rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    background-color: #000;
+    color: white;
+    border: 2px solid #7c3aed;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: inset 0 0 10px rgba(124, 58, 237, 0.3);
+  }
+  
+  .post-uploader textarea::placeholder {
+    color: #888;
+    font-size: 0.6rem;
+  }
+  
+  .post-uploader .btn-pixel {
+    margin-top: 0.5rem;
+  }
+  

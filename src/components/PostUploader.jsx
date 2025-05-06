@@ -3,6 +3,8 @@ import { db } from "../services/firebase-config";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useUser } from "../context/UserContext";
 import { toast } from "react-toastify";
+import "../styles/postuploader.css";
+
 
 const PostUploader = () => {
   const { userData } = useUser();
@@ -28,6 +30,7 @@ const PostUploader = () => {
 
       toast.success("Post created!");
       setText("");
+      if (typeof onPost === "function") onPost();
     } catch (err) {
       console.error("❌ Error creating post:", err);
       toast.error("Failed to post.");

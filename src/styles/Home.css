@@ -1,53 +1,61 @@
-
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .community-info {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  .community-avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 3px solid #7c3aed;
-  }
-  
-  .community-name {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .community-tagline {
-    font-size: 14px;
-    color: #666;
-  }
-  
-  .user-profile {
-    text-align: right;
-    width: 8%;
-  }
-  
-  .user-avatar {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    border: 3px solid #7c3aed;
-    position: relative;
-    display: flex;
-    text-align: center;
-  }
-  
-  .user-level {
-    font-size: 14px;
-    margin-top: 15px;
-    position: relative;
-    display: flex;
-    text-align: center;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-bottom: 2px solid #7c3aed;
+}
+
+.community-info {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.community-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px dashed #7c3aed;
+  background-color: #222;
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+}
+
+.community-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 5px #7c3aed;
+}
+
+.community-tagline {
+  font-size: 0.65rem;
+  color: #ccc;
+  margin-top: 0.4rem;
+  font-style: italic;
+}
+
+.user-profile {
+  text-align: center;
+  min-width: 100px;
+}
+
+.user-avatar {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 3px solid #7c3aed;
+  box-shadow: 0 0 8px rgba(124, 58, 237, 0.3);
+}
+
+.user-level {
+  margin-top: 0.5rem;
+  font-size: 0.6rem;
+  color: #fff;
+  background: #7c3aed;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  box-shadow: 0 0 4px #7c3aed;
+}
