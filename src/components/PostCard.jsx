@@ -15,7 +15,7 @@ export default function PostCard({ post }) {
         const hasLiked = post.likes?.includes(userData.uid);
 
         try {
-            const authorRef = doc(db, "users", post.uid);
+            const authorRef = doc(db, "users", post.authorId);
             const authorSnap = await getDoc(authorRef);
             const authorData = authorSnap.exists() ? authorSnap.data() : null;
 
@@ -31,7 +31,7 @@ export default function PostCard({ post }) {
                 likeCount: increment(hasLiked ? -1 : 1),
             });
 
-            if (post.uid !== userData.uid) {
+            if (post.authorId !== userData.uid) {
                 await updateDoc(authorRef, {
                     xp: newXP,
                     ...(newThreshold !== prevThreshold && {
@@ -45,7 +45,7 @@ export default function PostCard({ post }) {
     };
 
     const handleDelete = async () => {
-        if (!userData || post.uid !== userData.uid) return;
+        if (!userData || post.authorId !== userData.uid) return;
 
         const postRef = doc(db, "posts", post.id);
 
@@ -81,7 +81,7 @@ export default function PostCard({ post }) {
                 <button className="comment-btn" onClick={() => setActivePost(post)}>
                     💬 Comment
                 </button>
-                {userData?.uid === post.uid && (
+                {userData?.uid === post.authorId && (
                     <button className="delete-btn" onClick={handleDelete}>
                         🗑️ Delete
                     </button>
