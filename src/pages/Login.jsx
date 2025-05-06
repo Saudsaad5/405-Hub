@@ -11,13 +11,23 @@ const Login = () => {
   const handleGitHubLogin = async () => {
     const provider = new GithubAuthProvider();
     try {
-      await signInWithPopup(auth, provider);
-      toast.success("Signed in!");
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      const profile = result.additionalUserInfo?.profile;
+  
+      console.log("✅ GitHub login successful");
+      console.log("🧠 Display Name:", user.displayName);
+      console.log("📧 Email:", user.email);
+      console.log("🖼️ Avatar:", profile?.avatar_url || user.photoURL);
+      console.log("🐙 GitHub Username:", profile?.login); // GitHub-specific username
+  
+      toast.success("Signed in! 🚀");
       navigate("/dashboard");
     } catch (error) {
-      toast.error("GitHub login failed: " + error.message);
+      toast.error("GitHub login failed 😓: " + error.message);
     }
   };
+  
 
   return (
     <div className="login-container">
