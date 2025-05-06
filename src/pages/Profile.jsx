@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useUser } from "../context/UserContext";
-import { getDoc } from "firebase/firestore";
+import ProfileFeed from "../components/ProfileFeed";
 import "../styles/profile.css";
 
 const Profile = () => {
@@ -36,9 +36,8 @@ const Profile = () => {
         <div className="profile-header">
           <img src={userData.avatar} alt="Avatar" className="profile-avatar"/>
           <div  className="profile-info">
-          <h2 className="Name">{userData.displayName}</h2>
-          <h3 className="Rank">Rank {userData.level}</h3>
-            <p className="level-label">Level {userData.level}</p>
+          <h2>{userData.displayName}</h2>
+          <p className="level-label">Level {userData.level}</p>
           </div>
         </div>
 
@@ -49,6 +48,11 @@ const Profile = () => {
           ></div>
         </div>
         <p className="xp-text">XP: {currentXP} / 100</p>
+
+        <div className="profile-posts">
+          <h2>My Posts</h2>
+          <ProfileFeed />
+        </div>
       </div>
     </>
   );
