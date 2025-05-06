@@ -1,0 +1,45 @@
+.leaderboard-container{
+  height: 100%;
+  width: 100%;
+}
+
+.leaderboard-title {
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.leaderboard-entry {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #444;
+}
+
+.leaderboard-entry:nth-child(odd) {
+  background-color: #222;
+}
+
+.leaderboard-entry:nth-child(even) {
+  background-color: #333;
+}
+
+.entry-left {
+  display: flex;
+  align-items: center;
+}
+.entry-left img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.entry-left span {
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
