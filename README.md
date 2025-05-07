@@ -41,5 +41,5 @@ This system is built for King Abdulaziz University – Spring 2025, Department o
 ## 🚧 Project Status
 
 - 🔄 Profile system and XP tracking – in progress  
-- ✅ Firebase Hosting & Firestore integration – done  
+- ✅ User can post, like, and comment – done  
 - 🔜 Post management, and gamification UI polish
