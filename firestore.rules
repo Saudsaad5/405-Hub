@@ -1,0 +1,44 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Allow users to read/write their own user profile
+    match /users/{userId} {
+      allow read: if request.auth != null;
+
+      allow update: if request.auth != null && (
+        request.auth.uid == userId || 
+        request.resource.data.diff(resource.data).changedKeys().hasOnly(['xp', 'level'])
+      );
+
+      allow create: if request.auth != null && request.auth.uid == userId;
+      
+    }
+
+    // Posts rules
+    match /posts/{postId} {
+      allow read: if request.auth != null;
+
+      // Allow users to create their own posts
+      allow create: if request.auth != null && request.resource.data.authorId == request.auth.uid;
+
+
+      // Allow updating likes & likeCount only
+      allow update: if request.auth != null &&
+        request.resource.data.diff(resource.data).changedKeys().hasOnly(['likes', 'likeCount']);
+        
+        // Allow deleting their own post
+  			allow delete: if request.auth != null && resource.data.authorId == request.auth.uid;
+    }
+
+    // Comments subcollection
+    match /posts/{postId}/comments/{commentId} {
+      allow read, write: if request.auth != null;
+    }
+
+    // Likes subcollection (optional if you’re using it separately)
+    match /posts/{postId}/likes/{likeId} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
