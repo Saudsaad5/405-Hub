@@ -1,12 +1,45 @@
-# React + Vite
+# 🚀 405 Hub – Gamified Course Community Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**405 Hub** is a web-based platform built to enhance the course experience by turning student engagement into a rewarding and fun activity. Think of it as a social hub for your class — where learning meets gamification.
 
-Currently, two official plugins are available:
+Live Demo: [https://hub-df2a5.web.app]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🎯 Project Purpose
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+405 Hub empowers students to:
+- Share questions, study tips, project ideas, and memes
+- Interact with peers through a real-time social feed
+- Earn XP and achievements by receiving likes on their posts
+- Climb the leaderboard and unlock progress-based rewards
+
+This system is built for King Abdulaziz University – Spring 2025, Department of Information Technology.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React (Vite), JavaScript, CSS
+- **Backend:** Firebase (Firestore, Authentication, Hosting)
+- **Auth:** GitHub Login via Firebase
+- **Deployment:** Firebase Hosting
+
+---
+
+## 🔑 Key Features
+
+- 📱 **Social Feed:** Post anything from questions to memes  
+- 💬 **Likes & Comments:** Interact with posts in real time  
+- 🧠 **XP System:** Earn XP when others like your posts  
+- 🏆 **Leaderboard:** Track the top XP earners in the class  
+- 🎮 **Gamification:** Unlock levels and rewards as you grow  
+- 👤 **Profile Page:** Track your XP, level, and progress
+
+---
+
+## 🚧 Project Status
+
+- 🔄 Profile system and XP tracking – in progress  
+- ✅ Firebase Hosting & Firestore integration – done  
+- 🔜 Post management, and gamification UI polish
