@@ -19,7 +19,7 @@ const Login = () => {
       console.log("🧠 Display Name:", user.displayName);
       console.log("📧 Email:", user.email);
       console.log("🖼️ Avatar:", profile?.avatar_url || user.photoURL);
-      console.log("🐙 GitHub Username:", profile?.login); // GitHub-specific username
+      console.log("🐙 GitHub Username:", profile?.login);
   
       toast.success("Signed in! 🚀");
       navigate("/dashboard");
