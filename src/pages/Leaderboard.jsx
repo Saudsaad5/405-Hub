@@ -33,7 +33,7 @@ export default function Leaderboard() {
             />
             <span className="entry-name">{user.displayName || "Unnamed"}</span>
           </div>
-          <span className="entry-xp">{user.xp || 0} XP</span>
+          <span className="entry-xp">Level {user.level} : {user.xp || 0} XP</span>
         </div>
       ))}
     </div>
